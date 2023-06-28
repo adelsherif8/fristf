@@ -1,0 +1,37 @@
+ALGORITHM the_sum_of_all_distinct_elements 
+VAR
+    arrays1 : ARRAY_OF INTEGER[5];
+    arrays2 : ARRAY_OF INTEGER[5];
+    sum : INTEGER :=0
+    i : INTEGER
+    j :INTEGER
+    temp : BOOLEAN
+    temp1:INTEGER
+    temp2:INTEGER
+BEGIN
+    FOR i FROM 0 TO arrays1-1 STEP 1  DO
+    Write("enter number"+i)
+    Read(arrays1[i])
+    END_FOR
+    FOR j FROM 0 TO arrays2-1 STEP 1  DO
+    Write("enter number"+j)
+    Read(arrays2[j])
+    END_FOR
+    i = 0
+    j = 0
+    FOR i FROM 0 TO arrays1-1 STEP 1  DO
+    temp := TRUE
+    temp1 = arrays1[i]
+        FOR j FROM 0 TO arrays2-1 STEP 1  DO
+            temp2 = arrays1[j]
+            IF (arrays1[i]=arrays2[j]) THEN
+                BREAK
+                temp := FALSE
+            END_IF
+        END_FOR
+        IF DISTINCT THEN
+            sum = temp1 + temp2 + sum;
+        END_IF
+    END_FOR
+    Write(sum)
+END

@@ -1,0 +1,20 @@
+ALGORITHM read_number_of_words
+VAR
+    sent : STRING[50]
+    i : INTEGER
+    word : INTEGER:=0
+    vowel : INTEGER:=0
+BEGIN
+    Write("write word");
+    Read(sent);
+    FOR i FROM 0 TO sent.length-1 STEP 1  DO
+        IF (sent[i]=" ") THEN
+            word = word+1;
+        END_IF
+        IF (sent[i] = "a" or sent[i] = "e"  or sent[i] = "i" or sent[i] = "o" or sent[i] = "u") THEN
+            vowel = vowel + 1
+        END_IF
+    END_FOR
+    Write(word)
+    Write(vowel)
+END
